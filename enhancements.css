@@ -1,0 +1,129 @@
+.comfort-highlights {
+  margin-top: clamp(54px, 7vw, 96px);
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.comfort-feature {
+  min-height: 330px;
+  padding: clamp(28px, 3vw, 42px);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background: #fff;
+  border: 1px solid var(--line);
+  color: var(--navy);
+}
+
+.comfort-feature > span,
+.comfort-feature-photo div > span {
+  color: var(--gold-dark);
+  font-size: .62rem;
+  font-weight: 700;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+}
+
+.comfort-feature h3 {
+  margin: 13px 0 18px;
+  font: 400 clamp(1.9rem, 2.6vw, 3rem)/1 var(--serif);
+}
+
+.comfort-feature p {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: .9rem;
+}
+
+.comfort-feature-photo {
+  position: relative;
+  min-height: 520px;
+  padding: 0;
+  overflow: hidden;
+  color: #fff;
+}
+
+.comfort-feature-photo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 25%, rgba(7, 25, 43, .9));
+}
+
+.comfort-feature-photo img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.comfort-feature-photo div {
+  position: relative;
+  z-index: 1;
+  padding: clamp(28px, 3vw, 42px);
+}
+
+.comfort-feature-photo p {
+  max-width: 520px;
+  color: #e4e9ed;
+}
+
+.featured-testimonial {
+  min-height: 680px;
+  margin: 0 0 clamp(38px, 5vw, 64px);
+  display: grid;
+  grid-template-columns: minmax(340px, 460px) 1fr;
+  overflow: hidden;
+  background: var(--navy);
+  color: #fff;
+}
+
+.featured-testimonial video {
+  width: 100%;
+  height: 680px;
+  object-fit: contain;
+  object-position: center;
+  background: #020b13;
+}
+
+.featured-testimonial .testimonial-copy {
+  align-self: center;
+}
+
+@media (max-width: 900px) {
+  .comfort-highlights {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .comfort-feature-photo {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 640px) {
+  .comfort-highlights {
+    grid-template-columns: 1fr;
+  }
+
+  .comfort-feature-photo {
+    grid-column: auto;
+    min-height: 560px;
+  }
+
+  .comfort-feature {
+    min-height: 280px;
+  }
+
+  .featured-testimonial {
+    min-height: 0;
+    grid-template-columns: 1fr;
+    grid-template-rows: 620px auto;
+  }
+
+  .featured-testimonial video {
+    height: 620px;
+  }
+}
